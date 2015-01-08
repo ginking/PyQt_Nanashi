@@ -15,13 +15,15 @@ Original game available on AppStore. (https://itunes.apple.com/us/app/nanashi/id
 
 2. Run multiple client.py (upto 8) and play the game.
 
+3. Change host name and port number in the code if you like.
+
 ## Game Rules
 
 1. Blue first.
 
-2. You can extend one of your chess in 8 directions. (You should activate it first by clicking.)
+2. You can extend one of your chesses in 8 directions. (You should activate it first by clicking.)
 
-3. You can also make one of you chess jump over 1 blank. (Also, activate it first.)
+3. You can also make one of you chesses jump over 1 blank. (Also, activate it first.)
 
 4. Once you put a chess on a blank, it changes all adjacent opponents into your color.
 
