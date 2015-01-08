@@ -11,11 +11,13 @@ Original game available on AppStore. (https://itunes.apple.com/us/app/nanashi/id
 
 ## Usage
 
-1. Run server.py.
+1. Install PyQt4.
 
-2. Run multiple client.py (upto 8) and play the game.
+2. Run server.py.
 
-3. Change host name and port number in the code if you like.
+3. Run multiple client.py (upto 8) and play the game.
+
+4. Change host name and port number in the code if you like.
 
 ## Game Rules
 
