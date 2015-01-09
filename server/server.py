@@ -24,7 +24,7 @@ IP_TABLE = [[0, 0], [0, 0], [0, 0], [0, 0]]
 CHESSBOARD_TABLE = ['', '', '', '']
 STATUS_TABLE = [0, 0, 0, 0]
 TIME_TABLE = [0, 0, 0, 0]
-EXPIRE_TIME = 5
+EXPIRE_TIME = 30
 
 timestone = 0
 timestoneFlag = False
@@ -104,7 +104,7 @@ def judgeGame(gamestr):
         if (blueNum == 0):
             return JUDGEMENT_RED
         if (redNum == 0):
-            return JUDGEMENT_RED
+            return JUDGEMENT_BLUE
         return JUDGEMENT_PLAYING
     elif (blueNum > redNum):
         return JUDGEMENT_BLUE
@@ -151,6 +151,8 @@ while True:
             if (data.strip() == '#'):
                 soc.sendto('#', addr) # quit ack
                 IP_TABLE[table] = [0, 0]
+                CHESSBOARD_TABLE[table] = ''
+                STATUS_TABLE[table] = STATUS_IDLE
                 print 'He quit. He is %d.' % side
                 continue
             # tell him again to wait
@@ -207,6 +209,7 @@ while True:
                             tempStatus = STATUS_RED_WIN
                         else: # draw
                             tempStatus = STATUS_DRAW
+                        print tempStatus
                         # declare result
                         infoBlue = str(tempStatus) + '@0@' + CHESSBOARD_TABLE[table]
                         infoRed = str(tempStatus) + '@1@' + CHESSBOARD_TABLE[table]

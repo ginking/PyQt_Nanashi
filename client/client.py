@@ -148,6 +148,8 @@ class MyWindow(QtGui.QMainWindow):
             return
         # already activated
         tempCb = self.updateChessBoard(clickPos)
+        if (tempCb == -1): # illegal move
+            return
         # while True:
         #   if (self.recvFlag):
         #       self.recvFlag = False
@@ -163,7 +165,7 @@ class MyWindow(QtGui.QMainWindow):
         if ((abs(clickPos-self.activePos) == 16) or ((clickPos/8 == self.activePos/8) and (abs(clickPos-self.activePos) == 2))):
             res = setCharAt(res, '0', self.activePos)
         elif ((abs(clickPos/8-self.activePos/8) > 1) or (abs(clickPos%8-self.activePos%8) > 1)):
-            return res
+            return -1
         # put a new chess in the blank
         res = setCharAt(res, str(self.side+1), clickPos)
         # change the color of adjacent chess
